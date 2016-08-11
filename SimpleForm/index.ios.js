@@ -7,7 +7,8 @@ import {
   TextInput,
   View,
   ListView,
-  SegmentedControlIOS
+  SegmentedControlIOS,
+  Dimensions
 } from 'react-native';
 
 import Button from 'apsl-react-native-button';
@@ -17,7 +18,7 @@ var SimpleForm = React.createClass({
    return(
     <View style={{flex: 1, marginTop:30}}>
       <View style={{flex: 1, backgroundColor: '#00B140'}} />
-      <View style={{flex: 10 }}>
+      <View style={{flex: 11 }}>
         <ProgressBar />
       </View>
     </View>
@@ -42,7 +43,8 @@ var ProgressBar = React.createClass({
       <View style={{flex: 1}}>
         <View style={{flex: 0.8, backgroundColor: '#fff'}}>
           <SegmentedControlIOS
-            style={{flex: 1 }}
+            style={{flex: 1, borderWidth:0 }}
+
             values={this.state.values}
             selectedIndex={0}
 
@@ -53,7 +55,7 @@ var ProgressBar = React.createClass({
             }} />
         </View>
 
-        <View style={{flex: 9.2, backgroundColor: '#F7F9FB'}}>
+        <View style={{flex: 10.2, backgroundColor: '#F7F9FB'}}>
           {this.renderStepView()}
         </View>
 
@@ -65,39 +67,81 @@ var ProgressBar = React.createClass({
 
     if (this.state.selectedTab === 'Step 1') {
       return (
-        <View style={{flex: 1}}>
+        <View style={styles.container}>
+          <View style={{flex: 4}}>
+            <Text style={styles.text} >Upload Photo</Text>
+            <Text style={styles.errorMsg} >You need to upload a photo</Text>
+            <View style={styles.photoPlaceholder} />
+            <Text style={styles.desc}>Please upload any photo here.</Text>
+          </View>
 
-          <Text>Upload Photo</Text>
-          <View style={{width: 150, height: 150, backgroundColor: 'steelblue'}} />
-          <Text>Please upload any photo here.</Text>
-          <Button style={{backgroundColor: '#00B140'}}>
-            NEXT
-          </Button>
+          <View style={{flex: 1}}>
+            <Button style={styles.button} textStyle={styles.buttonText}>
+              NEXT
+            </Button>
+          </View>
+
         </View>
         )
     } else if (this.state.selectedTab === 'Step 2') {
       return (
-        <View style={{flex: 1}}>
+        <View style={styles.container}>
+          <View style={{flex: 4}}>
 
-          <Text>Your Contact Information</Text>
-          <Text>Fill in the following details</Text>
+            <Text style={styles.text} >Your Contact Information</Text>
+            <Text style={styles.desc} >Fill in the following details</Text>
 
-          <TextInput
-            style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-            placeholder="Your First Name"
-            onChangeText={(text) => this.setState({text})}
-          />
+            <TextInput
+              style={styles.textInput}
+              placeholder= "Your First Name"
+              placeholderTextColor = '#A3A9B2'
+              onChangeText={(text) => this.setState({text})}
+            />
+            <Text style={styles.errorMsg} >This ﬁeld cannot be empty</Text>
 
-          <Button style={{backgroundColor: '#00B140'}}>
-            NEXT
-          </Button>
+            <TextInput
+              style={styles.textInput}
+              placeholder= "Your Last Name"
+              placeholderTextColor = '#A3A9B2'
+              onChangeText={(text) => this.setState({text})}
+            />
+            <Text style={styles.errorMsg} >This ﬁeld cannot be empty</Text>
+
+            <TextInput
+              style={styles.textInput}
+              placeholder= "Contact Number"
+              placeholderTextColor = '#A3A9B2'
+              keyboardType={'phone-pad'}
+              onChangeText={(text) => this.setState({text})}
+            />
+            <Text style={styles.errorMsg} >This ﬁeld cannot be empty</Text>
+
+            <TextInput
+              style={[styles.textInput, styles.multiline]}
+              placeholder= "Address"
+              placeholderTextColor = '#A3A9B2'
+              numberOfLines={5}
+              multiline={true}
+
+              onChangeText={(text) => this.setState({text})}
+            />
+            <Text style={styles.errorMsg} >This ﬁeld cannot be empty</Text>
+
+
+          </View>
+
+          <View style={{flex: 1}}>
+            <Button style={styles.button} textStyle={{color: '#FFFFFF',fontSize: 14, fontWeight: '700'}}>
+              NEXT
+            </Button>
+          </View>
 
         </View>
         )
     } else {
       return (
-        <View style={{flex: 1}}>
-          <Text>Complete.</Text>
+        <View style={styles.container}>
+          <Text style={styles.completeMsg} >Complete.</Text>
         </View>
         )
     }
@@ -106,19 +150,70 @@ var ProgressBar = React.createClass({
 });
 
 var styles = StyleSheet.create({
-  text: {
-    fontSize: 14,
-    textAlign: 'center',
-    fontWeight: '500',
-    margin: 10,
-  },
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F7F9FB',
+    margin: 10,
   },
+  text: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#363A45',
+    margin: 10,
+    marginTop: 0,
+    marginBottom: 0,
+  },
+  errorMsg: {
+    color: '#D64425',
+    fontSize: 13,
+    margin: 10,
+    marginTop: 0,
+    fontWeight: '500',
+  },
+  desc: {
+    color: '#565D6B',
+    fontSize: 14,
+    margin: 10,
+    fontWeight: '500',
+  },
+  photoPlaceholder: {
+    borderColor: '#CCD6DD',
+    borderWidth: 1,
+    alignItems: 'stretch',
+    height: 152,
+    backgroundColor: '#eaeff2',
+  },
+  button: {
+    backgroundColor: '#00B140',
+    borderWidth: 0,
 
+    alignItems: 'stretch',
+    height: 50,
+    borderRadius: 3,
+
+  },
+  buttonText: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '700',
+  },
+  textInput: {
+    height: 42,
+    borderColor: '#CCD6DD',
+    borderWidth: 1,
+    borderRadius: 2,
+    backgroundColor: '#eaeff2',
+    color: '#333',
+    fontSize: 16,
+    paddingLeft: 10,
+  },
+  multiline: {
+    height: 87,
+  },
+  completeMsg: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
 });
 
 
