@@ -6,9 +6,7 @@ import {
   Text,
   TextInput,
   View,
-  ListView,
-  SegmentedControlIOS,
-  Dimensions
+  SegmentedControlIOS
 } from 'react-native';
 
 import Button from 'apsl-react-native-button';
@@ -43,11 +41,9 @@ var ProgressBar = React.createClass({
       <View style={{flex: 1}}>
         <View style={{flex: 0.8, backgroundColor: '#fff'}}>
           <SegmentedControlIOS
-            style={{flex: 1, borderWidth:0 }}
-
+            style={styles.segmentedControlIOS}
             values={this.state.values}
             selectedIndex={0}
-
             onValueChange={(val) => {
               this.setState({
                 selectedTab: val
@@ -150,6 +146,10 @@ var ProgressBar = React.createClass({
 });
 
 var styles = StyleSheet.create({
+  segmentedControlIOS: {
+    flex: 1,
+    borderWidth:0,
+  },
   container: {
     flex: 1,
     margin: 10,

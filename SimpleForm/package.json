@@ -8,6 +8,8 @@
   "dependencies": {
     "apsl-react-native-button": "^3.0.0",
     "react": "15.2.1",
-    "react-native": "0.31.0"
+    "react-native": "0.31.0",
+    "react-native-android-kit": "^1.1.2",
+    "react-native-radio-buttons": "^0.12.1"
   }
 }
