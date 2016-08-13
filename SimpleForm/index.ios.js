@@ -28,11 +28,14 @@ var SimpleForm = React.createClass({
   }
 });
 
+//var segCtrlIcon = (<Icon name="chevron-circle-right" size={30} color="#900" />);
+
 var ProgressBar = React.createClass({
   getInitialState() {
     return {
       values: ['Step 1', 'Step 2', 'Step 3'],
       selectedTab: 'Step 1',
+      selected: 0,
       firtNameText: ' ',
       lastNameText: ' ',
       contactNoText: ' ',
@@ -49,21 +52,28 @@ var ProgressBar = React.createClass({
     return (
       <View style={{flex: 1}}>
         <View style={{flex:0.8}}>
-          <SegmentedControlIOS
-            style={styles.segmentedControlIOS}
-            values={this.state.values}
-            selectedIndex={undefined}
-            momentary={true}
-            tintColor= '#00B140'
-
-            onValueChange={(val) => {
-              this.setState({
-                selectedTab: val
-              })
-            }} />
+          <CustomSegmentedControl
+              style={{flex:1, backgroundColor: '#fff',marginVertical: 8}}
+              textValues={this.state.values}
+              selected={0}
+              segmentedStyle={{
+                  selectedLineHeight: 2,
+                  fontSize:14,
+                  segmentBackgroundColor: 'transparent',
+                  segmentTextColor: '#9B9B9B',
+                  segmentHighlightTextColor: '#363A45',
+                  selectedLineMode: 'full',
+                  selectedLinePaddingWidth: 30,
+              }}
+              onSelectedDidChange={(event)=> {
+                this.setState({
+                  selected: event.nativeEvent.selected
+                })
+              }}
+          />
         </View>
-        <View style={{flex: 10.2, backgroundColor: '#F7F9FB'}}>
 
+        <View style={{flex: 10.2, backgroundColor: '#F7F9FB'}}>
           {this.renderStepView()}
         </View>
 
@@ -73,7 +83,7 @@ var ProgressBar = React.createClass({
 
   renderStepView: function() {
 
-    if (this.state.selectedTab === 'Step 1') {
+    if (this.state.selected === 0) {
       return (
         <View style={styles.container}>
           <View style={{flex: 4}}>
@@ -88,14 +98,14 @@ var ProgressBar = React.createClass({
 
           <View style={{flex: 1}}>
             <Button style={styles.button} textStyle={styles.buttonText} isDisabled={false} disabledStyle={styles.buttonDisable}
-              onPress= {(event) => this.setState({selectedTab: 'Step 2'})} >
+              onPress= {(event) => this.setState({selected: 1})} >
               NEXT
             </Button>
           </View>
 
         </View>
         )
-    } else if (this.state.selectedTab === 'Step 2') {
+    } else if (this.state.selected === 1) {
       return (
         <View style={styles.container}>
           <View style={{flex: 4}}>
@@ -147,7 +157,7 @@ var ProgressBar = React.createClass({
 
           <View style={{flex: 1}}>
             <Button style={styles.button} textStyle={styles.buttonText} isDisabled={false} disabledStyle={styles.buttonDisable}
-              onPress= {(event) => this.setState({selectedTab: 'Step 3'})} >
+              onPress= {(event) => this.setState({selected: 2})} >
               NEXT
             </Button>
           </View>
