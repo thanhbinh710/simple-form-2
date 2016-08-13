@@ -33,8 +33,15 @@ var ProgressBar = React.createClass({
     return {
       values: ['Step 1', 'Step 2', 'Step 3'],
       selectedTab: 'Step 1',
-      selected: '0',
-      text: '',
+      firtNameText: ' ',
+      lastNameText: ' ',
+      contactNoText: ' ',
+      addressText: ' ',
+      firstNameError: '',
+      lastNameError: '',
+      contactNoError: '',
+      addressError: '',
+      photoError: '',
     };
   },
 
@@ -71,7 +78,7 @@ var ProgressBar = React.createClass({
         <View style={styles.container}>
           <View style={{flex: 4}}>
             <Text style={styles.text} >Upload Photo</Text>
-            <Text style={styles.errorMsg} >You need to upload a photo</Text>
+            <Text style={styles.errorMsg} >{this.state.photoError}</Text>
             <View style={styles.photoPlaceholder}>
               <Icon name="plus-circle" size={32} color="#00B140" />
               <Text style={{color: "#00B140", fontSize: 14 }}t>Add photo</Text>
@@ -80,7 +87,8 @@ var ProgressBar = React.createClass({
           </View>
 
           <View style={{flex: 1}}>
-            <Button style={styles.button} textStyle={styles.buttonText}>
+            <Button style={styles.button} textStyle={styles.buttonText} isDisabled={false} disabledStyle={styles.buttonDisable}
+              onPress= {(event) => this.setState({selectedTab: 'Step 2'})} >
               NEXT
             </Button>
           </View>
@@ -99,26 +107,31 @@ var ProgressBar = React.createClass({
               style={styles.textInput}
               placeholder= "Your First Name"
               placeholderTextColor = '#A3A9B2'
-              onChangeText={(text) => this.setState({text})}
+              autoFocus= {true}
+              onChangeText={(text) => this.setState({firtNameText: text})}
+              onEndEditing={(event) => this.checkFirstName(event.nativeEvent.text)}
+
             />
-            <Text style={styles.errorMsg} >This ﬁeld cannot be empty</Text>
+            <Text style={styles.errorMsg} >{this.state.firstNameError}</Text>
 
             <TextInput
               style={styles.textInput}
               placeholder= "Your Last Name"
               placeholderTextColor = '#A3A9B2'
-              onChangeText={(text) => this.setState({text})}
+              onChangeText={(text) => this.setState({lastNameText: text})}
+              onEndEditing={(event) => this.checkLastName(event.nativeEvent.text)}
             />
-            <Text style={styles.errorMsg} >This ﬁeld cannot be empty</Text>
+            <Text style={styles.errorMsg} >{this.state.lastNameError}</Text>
 
             <TextInput
               style={styles.textInput}
               placeholder= "Contact Number"
               placeholderTextColor = '#A3A9B2'
               keyboardType={'phone-pad'}
-              onChangeText={(text) => this.setState({text})}
+              onChangeText={(text) => this.setState({contactNoText: text})}
+              onEndEditing={(event) => this.checkContactNo(event.nativeEvent.text)}
             />
-            <Text style={styles.errorMsg} >This ﬁeld cannot be empty</Text>
+            <Text style={styles.errorMsg} >{this.state.contactNoError}</Text>
 
             <TextInput
               style={[styles.textInput, styles.multiline]}
@@ -126,28 +139,59 @@ var ProgressBar = React.createClass({
               placeholderTextColor = '#A3A9B2'
               numberOfLines={5}
               multiline={true}
-
-              onChangeText={(text) => this.setState({text})}
+              onChangeText={(text) => this.setState({addressText: text})}
+              onEndEditing={(event) => this.checkAddress(event.nativeEvent.text)}
             />
-            <Text style={styles.errorMsg} >This ﬁeld cannot be empty</Text>
-
-
+            <Text style={styles.errorMsg} >{this.state.addressError}</Text>
           </View>
 
           <View style={{flex: 1}}>
-            <Button style={styles.button} textStyle={{color: '#FFFFFF',fontSize: 14, fontWeight: '700'}}>
+            <Button style={styles.button} textStyle={styles.buttonText} isDisabled={false} disabledStyle={styles.buttonDisable}
+              onPress= {(event) => this.setState({selectedTab: 'Step 3'})} >
               NEXT
             </Button>
           </View>
 
         </View>
-        )
+      )
     } else {
       return (
         <View style={styles.container}>
           <Text style={styles.completeMsg} >Complete.</Text>
         </View>
         )
+    }
+  },
+
+  checkFirstName(text) {
+    if (this.state.firtNameText=== null || this.state.firtNameText=== '') {
+      this.setState({firstNameError: 'This field cannot be empty'})
+    } else {
+      this.setState({firstNameError: ''})
+    }
+  },
+
+  checkLastName(text) {
+    if (this.state.lastNameText=== null || this.state.lastNameText=== '') {
+      this.setState({lastNameError: 'This field cannot be empty'})
+    } else {
+      this.setState({lastNameError: ''})
+    }
+  },
+
+  checkContactNo(text) {
+    if (this.state.contactNoText=== null || this.state.contactNoText=== '') {
+      this.setState({contactNoError: 'This field cannot be empty'})
+    } else {
+      this.setState({contactNoError: ''})
+    }
+  },
+
+  checkAddress(text) {
+    if (this.state.addressText=== null || this.state.addressText=== '') {
+      this.setState({addressError: 'This field cannot be empty'})
+    } else {
+      this.setState({addressError: ''})
     }
   },
 
@@ -194,10 +238,12 @@ var styles = StyleSheet.create({
   button: {
     backgroundColor: '#00B140',
     borderWidth: 0,
-
     alignItems: 'stretch',
     height: 50,
     borderRadius: 3,
+  },
+  buttonDisable: {
+    backgroundColor: '#ccd6dd',
 
   },
   buttonText: {
