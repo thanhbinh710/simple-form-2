@@ -83,9 +83,9 @@ var ProgressBar = React.createClass({
     );
   },
 
-  displayImage() {
+  /*displayImage() {
     this.setState({uri: './my-img.png'})
-  },
+  },*/
 
   renderStepView() {
 
