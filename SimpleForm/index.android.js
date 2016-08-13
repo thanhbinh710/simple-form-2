@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import Button from 'apsl-react-native-button';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {TabLayoutAndroid, TabAndroid} from "react-native-android-kit";
 
@@ -39,7 +40,10 @@ var SimpleSegmentedControl = React.createClass({
               <View style={{flex: 4}}>
                 <Text style={styles.text} >Upload Photo</Text>
                 <Text style={styles.errorMsg} >You need to upload a photo</Text>
-                <View style={styles.photoPlaceholder} />
+                <View style={styles.photoPlaceholder}>
+                  <Icon name="plus-circle" size={32} color="#00B140" />
+                  <Text style={{color: "#00B140", fontSize: 14 }}t>Add photo</Text>
+                </View>
                 <Text style={styles.desc}>Please upload any photo here.</Text>
               </View>
 
@@ -152,9 +156,10 @@ var styles = StyleSheet.create({
   photoPlaceholder: {
     borderColor: '#CCD6DD',
     borderWidth: 1,
-    alignItems: 'stretch',
     height: 152,
     backgroundColor: '#eaeff2',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   button: {
     backgroundColor: '#00B140',

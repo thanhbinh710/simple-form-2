@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 
 import Button from 'apsl-react-native-button';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {CustomSegmentedControl} from 'react-native-custom-segmented-control'
 
 var SimpleForm = React.createClass({
   render() {
@@ -31,7 +33,7 @@ var ProgressBar = React.createClass({
     return {
       values: ['Step 1', 'Step 2', 'Step 3'],
       selectedTab: 'Step 1',
-      selectedIndex: 0,
+      selected: '0',
       text: '',
     };
   },
@@ -39,19 +41,31 @@ var ProgressBar = React.createClass({
   render() {
     return (
       <View style={{flex: 1}}>
-        <View style={{flex: 0.8, backgroundColor: '#fff'}}>
-          <SegmentedControlIOS
-            style={styles.segmentedControlIOS}
-            values={this.state.values}
-            selectedIndex={0}
-            onValueChange={(val) => {
-              this.setState({
-                selectedTab: val
-              })
-            }} />
+        <View style={{flex:0.8}}>
+          <CustomSegmentedControl
+              style={{flex:1, backgroundColor: '#fff',marginVertical: 8}}
+              textValues={this.state.values}
+              selected={0}
+              segmentedStyle={{
+                  selectedLineHeight: 2,
+                  fontSize:14,
+                  segmentBackgroundColor: 'transparent',
+                  segmentTextColor: '#9B9B9B',
+                  segmentHighlightTextColor: '#363A45',
+                  //selectedLineColor: '#00B140',
+                  //selectedLineAlign: 'bottom', // top/bottom/text
+                  selectedLineMode: 'full', // full/text
+                  selectedLinePaddingWidth: 30,
+              }}
+              onSelectedDidChange={(event)=> {
+                this.setState({
+                  selectedTab: event.value
+                })
+              }}
+          />
         </View>
-
         <View style={{flex: 10.2, backgroundColor: '#F7F9FB'}}>
+
           {this.renderStepView()}
         </View>
 
@@ -67,7 +81,10 @@ var ProgressBar = React.createClass({
           <View style={{flex: 4}}>
             <Text style={styles.text} >Upload Photo</Text>
             <Text style={styles.errorMsg} >You need to upload a photo</Text>
-            <View style={styles.photoPlaceholder} />
+            <View style={styles.photoPlaceholder}>
+              <Icon name="plus-circle" size={32} color="#00B140" />
+              <Text style={{color: "#00B140", fontSize: 14 }}t>Add photo</Text>
+            </View>
             <Text style={styles.desc}>Please upload any photo here.</Text>
           </View>
 
@@ -178,9 +195,10 @@ var styles = StyleSheet.create({
   photoPlaceholder: {
     borderColor: '#CCD6DD',
     borderWidth: 1,
-    alignItems: 'stretch',
     height: 152,
     backgroundColor: '#eaeff2',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   button: {
     backgroundColor: '#00B140',
