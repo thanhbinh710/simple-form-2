@@ -42,27 +42,18 @@ var ProgressBar = React.createClass({
     return (
       <View style={{flex: 1}}>
         <View style={{flex:0.8}}>
-          <CustomSegmentedControl
-              style={{flex:1, backgroundColor: '#fff',marginVertical: 8}}
-              textValues={this.state.values}
-              selected={0}
-              segmentedStyle={{
-                  selectedLineHeight: 2,
-                  fontSize:14,
-                  segmentBackgroundColor: 'transparent',
-                  segmentTextColor: '#9B9B9B',
-                  segmentHighlightTextColor: '#363A45',
-                  //selectedLineColor: '#00B140',
-                  //selectedLineAlign: 'bottom', // top/bottom/text
-                  selectedLineMode: 'full', // full/text
-                  selectedLinePaddingWidth: 30,
-              }}
-              onSelectedDidChange={(event)=> {
-                this.setState({
-                  selectedTab: event.value
-                })
-              }}
-          />
+          <SegmentedControlIOS
+            style={styles.segmentedControlIOS}
+            values={this.state.values}
+            selectedIndex={undefined}
+            momentary={true}
+            tintColor= '#00B140'
+
+            onValueChange={(val) => {
+              this.setState({
+                selectedTab: val
+              })
+            }} />
         </View>
         <View style={{flex: 10.2, backgroundColor: '#F7F9FB'}}>
 
