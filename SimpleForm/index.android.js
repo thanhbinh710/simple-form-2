@@ -5,8 +5,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  View,
-  TouchableOpacity
+  View
 } from 'react-native';
 
 import Button from 'apsl-react-native-button';
@@ -62,7 +61,7 @@ var SimpleSegmentedControl = React.createClass({
               </View>
 
               <View style={{flex: 1}}>
-                <Button style={styles.button} textStyle={styles.buttonText} isDisabled={false} disabledStyle={styles.buttonDisable}>
+                <Button style={styles.button} textStyle={styles.buttonText} isDisabled={true} disabledStyle={styles.buttonDisable}>
                   NEXT
                 </Button>
               </View>

@@ -6,7 +6,7 @@ import {
   Text,
   TextInput,
   View,
-  SegmentedControlIOS
+  Image
 } from 'react-native';
 
 import Button from 'apsl-react-native-button';
@@ -29,6 +29,7 @@ var SimpleForm = React.createClass({
 });
 
 //var segCtrlIcon = (<Icon name="chevron-circle-right" size={30} color="#900" />);
+//<Image source={(this.state.uri)} style={{width: 226, height: 152}} />
 
 var ProgressBar = React.createClass({
   getInitialState() {
@@ -45,6 +46,7 @@ var ProgressBar = React.createClass({
       contactNoError: '',
       addressError: '',
       photoError: '',
+      uri: '',
     };
   },
 
@@ -65,7 +67,7 @@ var ProgressBar = React.createClass({
                   selectedLineMode: 'full',
                   selectedLinePaddingWidth: 30,
               }}
-              onSelectedDidChange={(event)=> {
+              onSelectedWillChange={(event)=> {
                 this.setState({
                   selected: event.nativeEvent.selected
                 })
@@ -81,7 +83,11 @@ var ProgressBar = React.createClass({
     );
   },
 
-  renderStepView: function() {
+  displayImage() {
+    this.setState({uri: './my-img.png'})
+  },
+
+  renderStepView() {
 
     if (this.state.selected === 0) {
       return (
@@ -89,15 +95,16 @@ var ProgressBar = React.createClass({
           <View style={{flex: 4}}>
             <Text style={styles.text} >Upload Photo</Text>
             <Text style={styles.errorMsg} >{this.state.photoError}</Text>
-            <View style={styles.photoPlaceholder}>
+            <View style={styles.photoPlaceholder} >
               <Icon name="plus-circle" size={32} color="#00B140" />
               <Text style={{color: "#00B140", fontSize: 14 }}t>Add photo</Text>
             </View>
             <Text style={styles.desc}>Please upload any photo here.</Text>
+
           </View>
 
           <View style={{flex: 1}}>
-            <Button style={styles.button} textStyle={styles.buttonText} isDisabled={false} disabledStyle={styles.buttonDisable}
+            <Button style={styles.button} textStyle={styles.buttonText} isDisabled={true} disabledStyle={styles.buttonDisable}
               onPress= {(event) => this.setState({selected: 1})} >
               NEXT
             </Button>
@@ -156,7 +163,7 @@ var ProgressBar = React.createClass({
           </View>
 
           <View style={{flex: 1}}>
-            <Button style={styles.button} textStyle={styles.buttonText} isDisabled={false} disabledStyle={styles.buttonDisable}
+            <Button style={styles.button} textStyle={styles.buttonText} isDisabled={true} disabledStyle={styles.buttonDisable}
               onPress= {(event) => this.setState({selected: 2})} >
               NEXT
             </Button>
