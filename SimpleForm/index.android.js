@@ -6,36 +6,32 @@ import {
   Text,
   TextInput,
   View,
-  SegmentedControlIOS
+  TouchableOpacity
 } from 'react-native';
 
 import Button from 'apsl-react-native-button';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {CustomSegmentedControl} from 'react-native-custom-segmented-control'
 
-var SimpleForm = React.createClass({
+import {TabLayoutAndroid, TabAndroid} from "react-native-android-kit";
+
+
+class SimpleForm extends Component {
   render() {
    return(
     <View style={{flex: 1, marginTop:30}}>
       <View style={{flex: 1, backgroundColor: '#00B140'}} />
       <View style={{flex: 11 }}>
-        <ProgressBar />
+        <SimpleSegmentedControl />
       </View>
     </View>
-
-
    )
   }
-});
+}
 
-//var segCtrlIcon = (<Icon name="chevron-circle-right" size={30} color="#900" />);
+var SimpleSegmentedControl = React.createClass({
 
-var ProgressBar = React.createClass({
   getInitialState() {
     return {
-      values: ['Step 1', 'Step 2', 'Step 3'],
-      selectedTab: 'Step 1',
-      selected: 0,
       firtNameText: ' ',
       lastNameText: ' ',
       contactNoText: ' ',
@@ -50,127 +46,98 @@ var ProgressBar = React.createClass({
 
   render() {
     return (
-      <View style={{flex: 1}}>
-        <View style={{flex:0.8}}>
-          <CustomSegmentedControl
-              style={{flex:1, backgroundColor: '#fff',marginVertical: 8}}
-              textValues={this.state.values}
-              selected={0}
-              segmentedStyle={{
-                  selectedLineHeight: 2,
-                  fontSize:14,
-                  segmentBackgroundColor: 'transparent',
-                  segmentTextColor: '#9B9B9B',
-                  segmentHighlightTextColor: '#363A45',
-                  selectedLineMode: 'full',
-                  selectedLinePaddingWidth: 30,
-              }}
-              onSelectedDidChange={(event)=> {
-                this.setState({
-                  selected: event.nativeEvent.selected
-                })
-              }}
-          />
-        </View>
+      <View style={{flex: 1, backgroundColor: '#F7F9FB'}}>
+        <TabLayoutAndroid style={styles.tabLayoutAndroid} backgroundColor='white' indicatorTabColor='white'
+                                indicatorTabHeight={2} scrollable={false} center={false}>
+          <TabAndroid text='Step 1' textSize={16} textColor="#9B9B9B" selectedTextColor='#363A45'>
+            <View style={styles.container}>
+              <View style={{flex: 4}}>
+                <Text style={styles.text} >Upload Photo</Text>
+                <Text style={styles.errorMsg} >{this.state.photoError}</Text>
+                <View style={styles.photoPlaceholder}>
+                  <Icon name="plus-circle" size={32} color="#00B140" />
+                  <Text style={{color: "#00B140", fontSize: 14 }}t>Add photo</Text>
+                </View>
+                <Text style={styles.desc}>Please upload any photo here.</Text>
+              </View>
 
-        <View style={{flex: 10.2, backgroundColor: '#F7F9FB'}}>
-          {this.renderStepView()}
-        </View>
+              <View style={{flex: 1}}>
+                <Button style={styles.button} textStyle={styles.buttonText} isDisabled={false} disabledStyle={styles.buttonDisable}>
+                  NEXT
+                </Button>
+              </View>
 
-      </View>
-    );
-  },
-
-  renderStepView: function() {
-
-    if (this.state.selected === 0) {
-      return (
-        <View style={styles.container}>
-          <View style={{flex: 4}}>
-            <Text style={styles.text} >Upload Photo</Text>
-            <Text style={styles.errorMsg} >{this.state.photoError}</Text>
-            <View style={styles.photoPlaceholder}>
-              <Icon name="plus-circle" size={32} color="#00B140" />
-              <Text style={{color: "#00B140", fontSize: 14 }}t>Add photo</Text>
             </View>
-            <Text style={styles.desc}>Please upload any photo here.</Text>
-          </View>
+          </TabAndroid>
 
-          <View style={{flex: 1}}>
-            <Button style={styles.button} textStyle={styles.buttonText} isDisabled={false} disabledStyle={styles.buttonDisable}
-              onPress= {(event) => this.setState({selected: 1})} >
-              NEXT
-            </Button>
-          </View>
+          <TabAndroid text='Step 2' textSize={16} textColor='#9B9B9B' selectedTextColor='#363A45'>
+            <View style={styles.container}>
+              <View style={{flex: 4}}>
 
-        </View>
-        )
-    } else if (this.state.selected === 1) {
-      return (
-        <View style={styles.container}>
-          <View style={{flex: 4}}>
+                <Text style={styles.text} >Your Contact Information</Text>
+                <Text style={styles.desc} >Fill in the following details</Text>
 
-            <Text style={styles.text} >Your Contact Information</Text>
-            <Text style={styles.desc} >Fill in the following details</Text>
+                <TextInput
+                  style={styles.textInput}
+                  placeholder= "Your First Name"
+                  placeholderTextColor = '#A3A9B2'
+                  autoFocus= {true}
+                  onChangeText={(text) => this.setState({firtNameText: text})}
+                  onEndEditing={(event) => this.checkFirstName(event.nativeEvent.text)}
 
-            <TextInput
-              style={styles.textInput}
-              placeholder= "Your First Name"
-              placeholderTextColor = '#A3A9B2'
-              autoFocus= {true}
-              onChangeText={(text) => this.setState({firtNameText: text})}
-              onEndEditing={(event) => this.checkFirstName(event.nativeEvent.text)}
+                />
+                <Text style={styles.errorMsg} >{this.state.firstNameError}</Text>
 
-            />
-            <Text style={styles.errorMsg} >{this.state.firstNameError}</Text>
+                <TextInput
+                  style={styles.textInput}
+                  placeholder= "Your Last Name"
+                  placeholderTextColor = '#A3A9B2'
+                  onChangeText={(text) => this.setState({lastNameText: text})}
+                  onEndEditing={(event) => this.checkLastName(event.nativeEvent.text)}
+                />
+                <Text style={styles.errorMsg} >{this.state.lastNameError}</Text>
 
-            <TextInput
-              style={styles.textInput}
-              placeholder= "Your Last Name"
-              placeholderTextColor = '#A3A9B2'
-              onChangeText={(text) => this.setState({lastNameText: text})}
-              onEndEditing={(event) => this.checkLastName(event.nativeEvent.text)}
-            />
-            <Text style={styles.errorMsg} >{this.state.lastNameError}</Text>
+                <TextInput
+                  style={styles.textInput}
+                  placeholder= "Contact Number"
+                  placeholderTextColor = '#A3A9B2'
+                  keyboardType={'phone-pad'}
+                  onChangeText={(text) => this.setState({contactNoText: text})}
+                  onEndEditing={(event) => this.checkContactNo(event.nativeEvent.text)}
+                />
+                <Text style={styles.errorMsg} >{this.state.contactNoError}</Text>
 
-            <TextInput
-              style={styles.textInput}
-              placeholder= "Contact Number"
-              placeholderTextColor = '#A3A9B2'
-              keyboardType={'phone-pad'}
-              onChangeText={(text) => this.setState({contactNoText: text})}
-              onEndEditing={(event) => this.checkContactNo(event.nativeEvent.text)}
-            />
-            <Text style={styles.errorMsg} >{this.state.contactNoError}</Text>
+                <TextInput
+                  style={[styles.textInput, styles.multiline]}
+                  placeholder= "Address"
+                  placeholderTextColor = '#A3A9B2'
+                  numberOfLines={5}
+                  multiline={true}
+                  onChangeText={(text) => this.setState({addressText: text})}
+                  onEndEditing={(event) => this.checkAddress(event.nativeEvent.text)}
+                />
+                <Text style={styles.errorMsg} >{this.state.addressError}</Text>
+              </View>
 
-            <TextInput
-              style={[styles.textInput, styles.multiline]}
-              placeholder= "Address"
-              placeholderTextColor = '#A3A9B2'
-              numberOfLines={5}
-              multiline={true}
-              onChangeText={(text) => this.setState({addressText: text})}
-              onEndEditing={(event) => this.checkAddress(event.nativeEvent.text)}
-            />
-            <Text style={styles.errorMsg} >{this.state.addressError}</Text>
-          </View>
+              <View style={{flex: 1}}>
+                <Button style={styles.button} textStyle={styles.buttonText} isDisabled={true} disabledStyle={styles.buttonDisable}>
+                  NEXT
+                </Button>
+              </View>
 
-          <View style={{flex: 1}}>
-            <Button style={styles.button} textStyle={styles.buttonText} isDisabled={false} disabledStyle={styles.buttonDisable}
-              onPress= {(event) => this.setState({selected: 2})} >
-              NEXT
-            </Button>
-          </View>
+            </View>
+          </TabAndroid>
 
-        </View>
-      )
-    } else {
-      return (
-        <View style={styles.container}>
-          <Text style={styles.completeMsg} >Complete.</Text>
-        </View>
-        )
-    }
+          <TabAndroid text='Step 3' textSize={16} textColor='#9B9B9B' selectedTextColor='#363A45'>
+            <View style={styles.container}>
+              <Text style={styles.completeMsg} >Complete.</Text>
+            </View>
+          </TabAndroid>
+
+        </TabLayoutAndroid>
+      </View>
+
+    );
   },
 
   checkFirstName(text) {
@@ -208,9 +175,8 @@ var ProgressBar = React.createClass({
 });
 
 var styles = StyleSheet.create({
-  segmentedControlIOS: {
-    flex: 1,
-    borderWidth:0,
+  tabLayoutAndroid: {
+
   },
   container: {
     flex: 1,
@@ -284,13 +250,6 @@ var styles = StyleSheet.create({
 
 exports.title = '<SimpleForm>';
 exports.displayName = 'SimpleForm';
-exports.examples = [
-  {
-    title: 'Change events can be detected',
-    render(): ReactElement { return <ProgressBar />; }
-  }
-];
-
 
 
 AppRegistry.registerComponent('SimpleForm', () => SimpleForm);
