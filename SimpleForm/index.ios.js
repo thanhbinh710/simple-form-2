@@ -6,7 +6,8 @@ import {
   Text,
   TextInput,
   View,
-  Image
+  Image,
+  TouchableHighlight
 } from 'react-native';
 
 import Button from 'apsl-react-native-button';
@@ -46,7 +47,8 @@ var ProgressBar = React.createClass({
       contactNoError: '',
       addressError: '',
       photoError: '',
-      uri: '',
+      addPhoto: false,
+      step_1_button_disabled: true
     };
   },
 
@@ -83,10 +85,6 @@ var ProgressBar = React.createClass({
     );
   },
 
-  /*displayImage() {
-    this.setState({uri: './my-img.png'})
-  },*/
-
   renderStepView() {
 
     if (this.state.selected === 0) {
@@ -96,15 +94,19 @@ var ProgressBar = React.createClass({
             <Text style={styles.text} >Upload Photo</Text>
             <Text style={styles.errorMsg} >{this.state.photoError}</Text>
             <View style={styles.photoPlaceholder} >
-              <Icon name="plus-circle" size={32} color="#00B140" />
-              <Text style={{color: "#00B140", fontSize: 14, fontFamily: 'SanomatGrabApp-Regular'}}t>Add photo</Text>
+              <TouchableHighlight onPress={(event) => this.setState({addPhoto: !this.state.addPhoto, step_1_button_disabled: !this.state.step_1_button_disabled})} >
+                  {this.displayImage()}
+              </TouchableHighlight>
             </View>
             <Text style={styles.desc}>Please upload any photo here.</Text>
 
           </View>
 
           <View style={{flex: 1}}>
-            <Button style={styles.button} textStyle={styles.buttonText} isDisabled={true} disabledStyle={styles.buttonDisable}
+            <Button style={styles.button} textStyle={styles.buttonText}
+              isDisabled={this.state.step_1_button_disabled}
+              disabledStyle={styles.buttonDisable}
+              id='step_1_button'
               onPress= {(event) => this.setState({selected: 1})} >
               NEXT
             </Button>
@@ -177,6 +179,21 @@ var ProgressBar = React.createClass({
           <Text style={styles.completeMsg} >Complete.</Text>
         </View>
         )
+    }
+  },
+
+  displayImage() {
+    if (this.state.addPhoto === true) {
+      return (
+        <Image source={require('./my-img.png')} style={{width: 226, height: 152}} />
+      )
+    } else {
+      return (
+        <View style={{justifyContent:'center', alignItems:'center'}}>
+          <Icon name="plus-circle" size={32} color="#00B140"/>
+          <Text style={{color: "#00B140", fontSize: 14 }}> Add photo </Text>
+        </View>
+      )
     }
   },
 
