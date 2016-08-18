@@ -48,7 +48,7 @@ var SimpleSegmentedControl = React.createClass({
       <View style={{flex: 1, backgroundColor: '#F7F9FB'}}>
         <TabLayoutAndroid style={styles.tabLayoutAndroid} backgroundColor='white' indicatorTabColor='white'
                                 indicatorTabHeight={2} scrollable={false} center={false}>
-          <TabAndroid text='Step 1' textSize={16} textColor="#9B9B9B" selectedTextColor='#363A45'>
+          <TabAndroid text='Step 1' textSize={16} textColor="#9B9B9B" selectedTextColor='#363A45' fontFamily='SanomatGrabApp-Regular'>
             <View style={styles.container}>
               <View style={{flex: 4}}>
                 <Text style={styles.text} >Upload Photo</Text>
@@ -69,7 +69,7 @@ var SimpleSegmentedControl = React.createClass({
             </View>
           </TabAndroid>
 
-          <TabAndroid text='Step 2' textSize={16} textColor='#9B9B9B' selectedTextColor='#363A45'>
+          <TabAndroid text='Step 2' textSize={16} textColor='#9B9B9B' selectedTextColor='#363A45' fontFamily='SanomatGrabApp-Regular'>
             <View style={styles.container}>
               <View style={{flex: 4}}>
 
@@ -127,7 +127,7 @@ var SimpleSegmentedControl = React.createClass({
             </View>
           </TabAndroid>
 
-          <TabAndroid text='Step 3' textSize={16} textColor='#9B9B9B' selectedTextColor='#363A45'>
+          <TabAndroid text='Step 3' textSize={16} textColor='#9B9B9B' selectedTextColor='#363A45' fontFamily='SanomatGrabApp-Regular'>
             <View style={styles.container}>
               <Text style={styles.completeMsg} >Complete.</Text>
             </View>
@@ -183,7 +183,7 @@ var styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    fontWeight: '500',
+    fontFamily: 'SanomatGrabApp-Regular',
     color: '#363A45',
     margin: 10,
     marginTop: 0,
@@ -191,16 +191,16 @@ var styles = StyleSheet.create({
   },
   errorMsg: {
     color: '#D64425',
+    fontFamily: 'SanomatGrabApp-Regular',
     fontSize: 13,
     margin: 10,
     marginTop: 0,
-    fontWeight: '500',
   },
   desc: {
     color: '#565D6B',
+    fontFamily: 'SanomatGrabApp-Regular',
     fontSize: 14,
     margin: 10,
-    fontWeight: '500',
   },
   photoPlaceholder: {
     borderColor: '#CCD6DD',
@@ -219,12 +219,11 @@ var styles = StyleSheet.create({
   },
   buttonDisable: {
     backgroundColor: '#ccd6dd',
-
   },
   buttonText: {
     color: '#FFFFFF',
     fontSize: 14,
-    fontWeight: '700',
+    fontFamily: 'SanomatGrabApp-XBold',
   },
   textInput: {
     height: 42,
@@ -243,6 +242,7 @@ var styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    fontFamily: 'SanomatGrabApp-Regular',
   },
 });
 

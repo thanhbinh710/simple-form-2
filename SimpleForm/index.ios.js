@@ -97,7 +97,7 @@ var ProgressBar = React.createClass({
             <Text style={styles.errorMsg} >{this.state.photoError}</Text>
             <View style={styles.photoPlaceholder} >
               <Icon name="plus-circle" size={32} color="#00B140" />
-              <Text style={{color: "#00B140", fontSize: 14 }}t>Add photo</Text>
+              <Text style={{color: "#00B140", fontSize: 14, fontFamily: 'SanomatGrabApp-Regular'}}t>Add photo</Text>
             </View>
             <Text style={styles.desc}>Please upload any photo here.</Text>
 
@@ -225,7 +225,7 @@ var styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    fontWeight: '500',
+    fontFamily: 'SanomatGrabApp-Regular',
     color: '#363A45',
     margin: 10,
     marginTop: 0,
@@ -233,16 +233,16 @@ var styles = StyleSheet.create({
   },
   errorMsg: {
     color: '#D64425',
+    fontFamily: 'SanomatGrabApp-Regular',
     fontSize: 13,
     margin: 10,
     marginTop: 0,
-    fontWeight: '500',
   },
   desc: {
     color: '#565D6B',
+    fontFamily: 'SanomatGrabApp-Regular',
     fontSize: 14,
     margin: 10,
-    fontWeight: '500',
   },
   photoPlaceholder: {
     borderColor: '#CCD6DD',
@@ -261,12 +261,11 @@ var styles = StyleSheet.create({
   },
   buttonDisable: {
     backgroundColor: '#ccd6dd',
-
   },
   buttonText: {
     color: '#FFFFFF',
     fontSize: 14,
-    fontWeight: '700',
+    fontFamily: 'SanomatGrabApp-XBold',
   },
   textInput: {
     height: 42,
@@ -285,21 +284,12 @@ var styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    fontFamily: 'SanomatGrabApp-Regular',
   },
 });
 
 
 exports.title = '<SimpleForm>';
 exports.displayName = 'SimpleForm';
-exports.examples = [
-  {
-    title: 'Change events can be detected',
-    render(): ReactElement { return <ProgressBar />; }
-  }
-];
-
-
 
 AppRegistry.registerComponent('SimpleForm', () => SimpleForm);
-
-module.exports = SimpleForm;

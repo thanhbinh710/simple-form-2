@@ -14,5 +14,8 @@
     "react-native-custom-segmented-control": "^3.0.4",
     "react-native-radio-buttons": "^0.12.1",
     "react-native-vector-icons": "^2.0.3"
+  },
+  "rnpm": {
+      "assets": ["./Fonts/sanomat_font"]
   }
 }

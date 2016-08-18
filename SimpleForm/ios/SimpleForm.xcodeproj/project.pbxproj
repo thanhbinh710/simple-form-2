@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -12,6 +13,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* SimpleFormTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SimpleFormTests.m */; };
+		06257DE6BA894F33A9DBE305 /* Sanomat-Grab-App-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03179CBD39824A2094E534FE /* Sanomat-Grab-App-Medium.ttf */; };
 		0B27040F4D3B411C9502B7B8 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 176797435107474EAEEC3FD2 /* Zocial.ttf */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
@@ -22,16 +24,25 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		1F25E056EC9F48A786A8AA65 /* libCustomSegmentedControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E987609721492A9B752D76 /* libCustomSegmentedControl.a */; };
+		46416F906E114A86B6FFDC9E /* Sanomat-Grab-App-Light Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03E42077876B481594E7972E /* Sanomat-Grab-App-Light Italic.ttf */; };
+		4A7F4BAD27D143EBBC1F0EDE /* Sanomat-Grab-App-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C57E85C2108748869B48D966 /* Sanomat-Grab-App-Light.ttf */; };
 		5D787E6C480C4B5EBA9B59FA /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B997834EB604B3C833AA7D2 /* libRNVectorIcons.a */; };
 		66CFFCD701F84538A74DE17D /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CAAA3419BEB4E87A5D68B52 /* Entypo.ttf */; };
+		6E050FD3AF984E45B53037C9 /* Sanomat-Grab-App-XBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE744B773F624EBF92D4C4A7 /* Sanomat-Grab-App-XBold.ttf */; };
+		7C8E8E3BDBA248FCADF64130 /* Sanomat-Grab-App-XBold-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4C77A910D1346CA93C4472D /* Sanomat-Grab-App-XBold-Italic.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		833E458F47614F89ACAE5E58 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF7A1CA014F30BE604E48 /* Foundation.ttf */; };
 		8B7CCBEDF7094924ABEEEA17 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68A05F55580544D5B21AF7A2 /* Ionicons.ttf */; };
 		8F13AC5930F44CF68D127BA4 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 064E15F45154427A8BB52D0B /* EvilIcons.ttf */; };
+		9004123562D7490783576EC7 /* Sanomat-Grab-App-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 034152B7B9904718AA616829 /* Sanomat-Grab-App-Bold.ttf */; };
 		911AA53AE3A24800AA343D24 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 335C9102DB7B48D2ADF07F0D /* MaterialIcons.ttf */; };
 		C1657202CBF241C7925C4F8B /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9679BC8531F14C45A60FD23F /* FontAwesome.ttf */; };
+		C60D00782AF142D099E7FEDA /* Sanomat-Grab-App-Medium-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5A6F7C3564244CFA42EA7D8 /* Sanomat-Grab-App-Medium-Italic.ttf */; };
 		D19808777CC04D14A8BB0F41 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 707CA41935334BD8B734DC95 /* Octicons.ttf */; };
-		1F25E056EC9F48A786A8AA65 /* libCustomSegmentedControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E987609721492A9B752D76 /* libCustomSegmentedControl.a */; };
+		D7161C0B39A44C109A7D17B1 /* Sanomat-Grab-App-Regular-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAF1858A4B7642EDACC28ABB /* Sanomat-Grab-App-Regular-Italic.ttf */; };
+		D8155F6513584740958FF28A /* Sanomat-Grab-App-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E2636C2E70F4148B613AB08 /* Sanomat-Grab-App-Regular.ttf */; };
+		DEAF9A0F98C64AC5A3776D35 /* Sanomat-Grab-App-Bold-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D5EF83B40E74EBA9C6F1842 /* Sanomat-Grab-App-Bold-Italic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +87,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = SimpleForm;
+		};
+		0B7FA0AB1D657B4300D2E241 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18C65563B96F4DBFA4C5AFD1 /* CustomSegmentedControl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 26751C0A1CE8BD5C0006725F;
+			remoteInfo = CustomSegmentedControl;
 		};
 		0B9A1CC11D5F0457006A6395 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -132,6 +150,9 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* SimpleFormTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleFormTests.m; sourceTree = "<group>"; };
 		02CEF7A1CA014F30BE604E48 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		03179CBD39824A2094E534FE /* Sanomat-Grab-App-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sanomat-Grab-App-Medium.ttf"; path = "../Fonts/sanomat_font/Sanomat-Grab-App-Medium.ttf"; sourceTree = "<group>"; };
+		034152B7B9904718AA616829 /* Sanomat-Grab-App-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sanomat-Grab-App-Bold.ttf"; path = "../Fonts/sanomat_font/Sanomat-Grab-App-Bold.ttf"; sourceTree = "<group>"; };
+		03E42077876B481594E7972E /* Sanomat-Grab-App-Light Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sanomat-Grab-App-Light Italic.ttf"; path = "../Fonts/sanomat_font/Sanomat-Grab-App-Light Italic.ttf"; sourceTree = "<group>"; };
 		064E15F45154427A8BB52D0B /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
@@ -144,17 +165,24 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SimpleForm/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		176797435107474EAEEC3FD2 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		18C65563B96F4DBFA4C5AFD1 /* CustomSegmentedControl.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CustomSegmentedControl.xcodeproj; path = "../node_modules/react-native-custom-segmented-control/ios/lib/CustomSegmentedControl.xcodeproj"; sourceTree = "<group>"; };
+		19E987609721492A9B752D76 /* libCustomSegmentedControl.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCustomSegmentedControl.a; sourceTree = "<group>"; };
 		335C9102DB7B48D2ADF07F0D /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		3CAAA3419BEB4E87A5D68B52 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		4D5EF83B40E74EBA9C6F1842 /* Sanomat-Grab-App-Bold-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sanomat-Grab-App-Bold-Italic.ttf"; path = "../Fonts/sanomat_font/Sanomat-Grab-App-Bold-Italic.ttf"; sourceTree = "<group>"; };
 		68A05F55580544D5B21AF7A2 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		707CA41935334BD8B734DC95 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7B997834EB604B3C833AA7D2 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		8E2636C2E70F4148B613AB08 /* Sanomat-Grab-App-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sanomat-Grab-App-Regular.ttf"; path = "../Fonts/sanomat_font/Sanomat-Grab-App-Regular.ttf"; sourceTree = "<group>"; };
 		9679BC8531F14C45A60FD23F /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		A4C77A910D1346CA93C4472D /* Sanomat-Grab-App-XBold-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sanomat-Grab-App-XBold-Italic.ttf"; path = "../Fonts/sanomat_font/Sanomat-Grab-App-XBold-Italic.ttf"; sourceTree = "<group>"; };
+		A5A6F7C3564244CFA42EA7D8 /* Sanomat-Grab-App-Medium-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sanomat-Grab-App-Medium-Italic.ttf"; path = "../Fonts/sanomat_font/Sanomat-Grab-App-Medium-Italic.ttf"; sourceTree = "<group>"; };
+		BAF1858A4B7642EDACC28ABB /* Sanomat-Grab-App-Regular-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sanomat-Grab-App-Regular-Italic.ttf"; path = "../Fonts/sanomat_font/Sanomat-Grab-App-Regular-Italic.ttf"; sourceTree = "<group>"; };
+		C57E85C2108748869B48D966 /* Sanomat-Grab-App-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sanomat-Grab-App-Light.ttf"; path = "../Fonts/sanomat_font/Sanomat-Grab-App-Light.ttf"; sourceTree = "<group>"; };
+		CE744B773F624EBF92D4C4A7 /* Sanomat-Grab-App-XBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sanomat-Grab-App-XBold.ttf"; path = "../Fonts/sanomat_font/Sanomat-Grab-App-XBold.ttf"; sourceTree = "<group>"; };
 		F70E2273967441C3BBAD7890 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
-		18C65563B96F4DBFA4C5AFD1 /* CustomSegmentedControl.xcodeproj */ = {isa = PBXFileReference; name = "CustomSegmentedControl.xcodeproj"; path = "../node_modules/react-native-custom-segmented-control/ios/lib/CustomSegmentedControl.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		19E987609721492A9B752D76 /* libCustomSegmentedControl.a */ = {isa = PBXFileReference; name = "libCustomSegmentedControl.a"; path = "libCustomSegmentedControl.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +271,14 @@
 				00E356F11AD99517003FC87E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0B7FA0A81D657B4100D2E241 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0B7FA0AC1D657B4300D2E241 /* libCustomSegmentedControl.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		0B9A1CB41D5F0457006A6395 /* Products */ = {
@@ -359,6 +395,16 @@
 				335C9102DB7B48D2ADF07F0D /* MaterialIcons.ttf */,
 				707CA41935334BD8B734DC95 /* Octicons.ttf */,
 				176797435107474EAEEC3FD2 /* Zocial.ttf */,
+				4D5EF83B40E74EBA9C6F1842 /* Sanomat-Grab-App-Bold-Italic.ttf */,
+				034152B7B9904718AA616829 /* Sanomat-Grab-App-Bold.ttf */,
+				03E42077876B481594E7972E /* Sanomat-Grab-App-Light Italic.ttf */,
+				C57E85C2108748869B48D966 /* Sanomat-Grab-App-Light.ttf */,
+				A5A6F7C3564244CFA42EA7D8 /* Sanomat-Grab-App-Medium-Italic.ttf */,
+				03179CBD39824A2094E534FE /* Sanomat-Grab-App-Medium.ttf */,
+				BAF1858A4B7642EDACC28ABB /* Sanomat-Grab-App-Regular-Italic.ttf */,
+				8E2636C2E70F4148B613AB08 /* Sanomat-Grab-App-Regular.ttf */,
+				A4C77A910D1346CA93C4472D /* Sanomat-Grab-App-XBold-Italic.ttf */,
+				CE744B773F624EBF92D4C4A7 /* Sanomat-Grab-App-XBold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -429,6 +475,10 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 0B7FA0A81D657B4100D2E241 /* Products */;
+					ProjectRef = 18C65563B96F4DBFA4C5AFD1 /* CustomSegmentedControl.xcodeproj */;
+				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -518,6 +568,13 @@
 			remoteRef = 00C302E31ABCB9EE00DB3ED1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		0B7FA0AC1D657B4300D2E241 /* libCustomSegmentedControl.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCustomSegmentedControl.a;
+			remoteRef = 0B7FA0AB1D657B4300D2E241 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		0B9A1CC21D5F0457006A6395 /* libRNVectorIcons.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -584,6 +641,16 @@
 				911AA53AE3A24800AA343D24 /* MaterialIcons.ttf in Resources */,
 				D19808777CC04D14A8BB0F41 /* Octicons.ttf in Resources */,
 				0B27040F4D3B411C9502B7B8 /* Zocial.ttf in Resources */,
+				DEAF9A0F98C64AC5A3776D35 /* Sanomat-Grab-App-Bold-Italic.ttf in Resources */,
+				9004123562D7490783576EC7 /* Sanomat-Grab-App-Bold.ttf in Resources */,
+				46416F906E114A86B6FFDC9E /* Sanomat-Grab-App-Light Italic.ttf in Resources */,
+				4A7F4BAD27D143EBBC1F0EDE /* Sanomat-Grab-App-Light.ttf in Resources */,
+				C60D00782AF142D099E7FEDA /* Sanomat-Grab-App-Medium-Italic.ttf in Resources */,
+				06257DE6BA894F33A9DBE305 /* Sanomat-Grab-App-Medium.ttf in Resources */,
+				D7161C0B39A44C109A7D17B1 /* Sanomat-Grab-App-Regular-Italic.ttf in Resources */,
+				D8155F6513584740958FF28A /* Sanomat-Grab-App-Regular.ttf in Resources */,
+				7C8E8E3BDBA248FCADF64130 /* Sanomat-Grab-App-XBold-Italic.ttf in Resources */,
+				6E050FD3AF984E45B53037C9 /* Sanomat-Grab-App-XBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

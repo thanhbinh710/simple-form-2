@@ -59,6 +59,16 @@
       <string>MaterialIcons.ttf</string>
       <string>Octicons.ttf</string>
       <string>Zocial.ttf</string>
+      <string>Sanomat-Grab-App-Bold-Italic.ttf</string>
+      <string>Sanomat-Grab-App-Bold.ttf</string>
+      <string>Sanomat-Grab-App-Light Italic.ttf</string>
+      <string>Sanomat-Grab-App-Light.ttf</string>
+      <string>Sanomat-Grab-App-Medium-Italic.ttf</string>
+      <string>Sanomat-Grab-App-Medium.ttf</string>
+      <string>Sanomat-Grab-App-Regular-Italic.ttf</string>
+      <string>Sanomat-Grab-App-Regular.ttf</string>
+      <string>Sanomat-Grab-App-XBold-Italic.ttf</string>
+      <string>Sanomat-Grab-App-XBold.ttf</string>
     </array>
   </dict>
 </plist>
